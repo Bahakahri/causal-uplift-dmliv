@@ -5,7 +5,7 @@ incrementality dataset**
 ---
 
 ## Business Question
-Does ad exposure causally increase user visits — and which users respond most?
+Does ad exposure causally increase user visits and which users respond most?
 
 Naive comparison of exposed vs unexposed users is biased. This project applies
 Double ML with an Instrumental Variable (DMLIV) to isolate the true causal 
@@ -36,16 +36,16 @@ Three compounding problems make naive estimation invalid:
 
 **1. Nonlinear confounding**
 Features f0–f11 strongly predict both who gets exposed and whether they visit
-(nuisance model AUC: 0.92–0.94). OLS assumes linearity — LightGBM in the 
+(nuisance model AUC: 0.92–0.94). OLS assumes linearity LightGBM in the 
 Double ML first stage removes this assumption.
 
 **2. Endogeneity**
-Actual ad exposure (D) is not random — users self-select into seeing ads. 
+Actual ad exposure (D) is not random users self-select into seeing ads. 
 Even after controlling for observables, unobservable selection bias remains.
 
 **3. Instrument solution**
 Treatment assignment (Z) was randomly assigned by Criteo (F-stat: 5,575, 
-instrument AUC: 0.507). We use Z as an instrument for D — isolating only the 
+instrument AUC: 0.507). We use Z as an instrument for D isolating only the 
 clean, randomized variation in exposure.
 
 ---
@@ -68,10 +68,10 @@ clean, randomized variation in exposure.
 
 ## Visualizations
 
-### Overlap Check — Positivity Assumption
+### Overlap Check Positivity Assumption
 ![Overlap Check](outputs/overlap_check.png)
 
-### OLS vs Double ML — Bias Decomposition
+### OLS vs Double ML Bias Decomposition
 ![OLS vs DML](outputs/ols_vs_dml.png)
 
 ### Full Policy Dashboard
@@ -81,7 +81,7 @@ clean, randomized variation in exposure.
 
 ## Core Finding
 
-> *The average treatment effect was statistically insignificant — masking 
+> *The average treatment effect was statistically insignificant masking 
 > substantial heterogeneity. 91% of users show positive response to ad exposure 
 > while 9% are actively harmed. Targeting the right users generates 9.4% more 
 > incremental visits than targeting everyone.*
@@ -94,7 +94,7 @@ Python · EconML · LightGBM · scikit-learn · pandas · matplotlib · NumPy
 ---
 
 ## Data
-Criteo Uplift Modeling Dataset — 
+Criteo Uplift Modeling Dataset 
 https://ailab.criteo.com/criteo-uplift-prediction-dataset/
 
 The dataset is not included in this repository (459MB). Download it from the 
@@ -120,8 +120,8 @@ jupyter notebook notebooks/causal_uplift_dmliv.ipynb
 ---
 
 ## Limitations
-- Features are anonymized — effect modifiers cannot be given business 
+- Features are anonymized effect modifiers cannot be given business 
   interpretation without domain knowledge
 - LATE applies only to compliers (3.6% of treated users)
-- Criteo scrambled the true incrementality level — absolute effect sizes 
+- Criteo scrambled the true incrementality level absolute effect sizes 
   are not Criteo's real business metrics
