@@ -50,19 +50,15 @@ clean, randomized variation in exposure.
 
 ---
 
-## Methodology
-
----
-
 ## Assumption Validation
 
 | Assumption | Test | Result |
 |---|---|---|
-| Overlap / Positivity | Propensity score distributions | 100% common support ✅ |
-| Instrument relevance | First-stage F-statistic | F = 5,575 ✅ |
-| Instrument exogeneity | Z nuisance model AUC | AUC = 0.507 ✅ |
-| Confounding severity | Y, D nuisance AUC | 0.94 / 0.92 ✅ |
-| OLS linearity failure | R² linear vs LightGBM | LightGBM dominates ✅ |
+| Overlap / Positivity | Propensity score distributions | 100% common support |
+| Instrument relevance | First-stage F-statistic | F = 5,575 |
+| Instrument exogeneity | Z nuisance model AUC | AUC = 0.507 |
+| Confounding severity | Y, D nuisance AUC | 0.94 / 0.92 |
+| OLS linearity failure | R² linear vs LightGBM | LightGBM dominates |
 
 ---
 
@@ -106,7 +102,7 @@ link above and place it in the `data/` folder.
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/causal-uplift-dmliv
+git clone https://github.com/Bahakahri/causal-uplift-dmliv
 cd causal-uplift-dmliv
 
 # Install dependencies
