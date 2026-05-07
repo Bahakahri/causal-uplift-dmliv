@@ -30,7 +30,7 @@ effect of ad exposure, then estimates Conditional Average Treatment Effects
 
 ---
 
-## Why DMLIV — Not Standard Regression
+## Why DMLIV and not Standard Regression
 
 Three compounding problems make naive estimation invalid:
 
